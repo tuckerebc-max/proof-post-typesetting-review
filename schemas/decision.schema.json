@@ -1,0 +1,26 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/ppr/decision.schema.json",
+  "title":"PPR Human Release Decision",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["decision_id","run_id","baseline_id","proof_id","recommendation","finding_ids","correction_ids","fixity_event_ids","rationale","signatory_role","status","created_at"],
+  "properties":{
+    "decision_id":{"type":"string","pattern":"^PPR-DEC-"},
+    "run_id":{"type":"string"},
+    "baseline_id":{"type":"string"},
+    "proof_id":{"type":"string"},
+    "recommendation":{"type":"string","enum":["ready","ready_with_tracked_items","hold","blocked","post_publication_case"]},
+    "finding_ids":{"type":"array","items":{"type":"string"}},
+    "correction_ids":{"type":"array","items":{"type":"string"}},
+    "fixity_event_ids":{"type":"array","items":{"type":"string"}},
+    "rationale":{"type":"string"},
+    "conditions":{"type":"array","items":{"type":"string"}},
+    "signatory_role":{"type":"string"},
+    "signatory":{"type":["string","null"]},
+    "signed_at":{"type":["string","null"],"format":"date-time"},
+    "status":{"type":"string","enum":["recommendation_only","pending_signoff","signed","superseded"]},
+    "supersedes":{"type":["string","null"]},
+    "created_at":{"type":"string","format":"date-time"}
+  }
+}

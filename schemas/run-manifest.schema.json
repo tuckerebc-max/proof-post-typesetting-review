@@ -1,0 +1,25 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/ppr/run-manifest.schema.json",
+  "title":"PPR Run Manifest",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["run_id","chapter_id","volume_id","stage","baseline_id","proof_id","output_formats","approved_variations_id","correction_channel","upstream_statuses","protected_record_policy","signatory_role","reviewer","started_at"],
+  "properties":{
+    "run_id":{"type":"string","pattern":"^PPR-RUN-"},
+    "chapter_id":{"type":"string"},
+    "volume_id":{"type":"string"},
+    "stage":{"type":"string","enum":["proof","reproof","final_output","post_publication"]},
+    "baseline_id":{"type":"string","pattern":"^PPR-BL-"},
+    "proof_id":{"type":"string"},
+    "output_formats":{"type":"array","items":{"type":"string","enum":["print","pdf","ebook","html","accessible_pdf","other"]}},
+    "approved_variations_id":{"type":["string","null"]},
+    "correction_channel":{"type":"string"},
+    "upstream_statuses":{"type":"array","items":{"$ref":"https://mwm.local/schemas/ppr/upstream-result.schema.json"}},
+    "protected_record_policy":{"type":"string"},
+    "signatory_role":{"type":"string"},
+    "reviewer":{"type":"string"},
+    "deadline":{"type":["string","null"],"format":"date-time"},
+    "started_at":{"type":"string","format":"date-time"}
+  }
+}

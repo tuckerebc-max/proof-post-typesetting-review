@@ -1,0 +1,24 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/ppr/correction.schema.json",
+  "title":"PPR Correction Record",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["correction_id","finding_id","location","current_text_or_object","replacement_text_or_object","reason","submitted_by","submitted_at","decision","decision_owner","incorporated_in","reproof_scope","reproof_result"],
+  "properties":{
+    "correction_id":{"type":"string","pattern":"^COR-"},
+    "finding_id":{"type":"string","pattern":"^PPR-FND-"},
+    "location":{"type":"string"},
+    "current_text_or_object":{"type":"string"},
+    "replacement_text_or_object":{"type":"string"},
+    "reason":{"type":"string","enum":["typesetter_error","factual_error","meaning_error","asset_replacement","query_response"]},
+    "submitted_by":{"type":"string"},
+    "submitted_at":{"type":"string","format":"date-time"},
+    "decision":{"type":"string","enum":["accept","reject","defer","refer"]},
+    "decision_owner":{"type":"string"},
+    "decision_rationale":{"type":["string","null"]},
+    "incorporated_in":{"type":["string","null"]},
+    "reproof_scope":{"type":"string"},
+    "reproof_result":{"type":"string","enum":["pending","passed","failed","not_applicable_with_reason"]}
+  }
+}

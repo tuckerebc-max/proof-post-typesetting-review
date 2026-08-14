@@ -1,0 +1,7 @@
+interface:
+  display_name: "Proof & Post-Typesetting Review"
+  short_description: "Baseline-aware proof and release review"
+  default_prompt: "Use $proof-post-typesetting-review to compare approved baselines with proofs and outputs, preserve corrections, and route release risks."
+
+policy:
+  allow_implicit_invocation: true

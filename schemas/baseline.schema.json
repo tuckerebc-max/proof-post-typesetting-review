@@ -1,0 +1,24 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/ppr/baseline.schema.json",
+  "title":"PPR Baseline Record",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["baseline_id","chapter_id","volume_id","approved_version","copyedited_version","proof_version","output_version","file_ids","hashes_or_fixity","approved_variations","stage","captured_at","captured_by"],
+  "properties":{
+    "baseline_id":{"type":"string","pattern":"^PPR-BL-"},
+    "chapter_id":{"type":"string"},
+    "volume_id":{"type":"string"},
+    "approved_version":{"type":"string"},
+    "copyedited_version":{"type":"string"},
+    "proof_version":{"type":"string"},
+    "output_version":{"type":["string","null"]},
+    "file_ids":{"type":"array","items":{"type":"string"}},
+    "hashes_or_fixity":{"type":"array","items":{"type":"string"}},
+    "approved_variations":{"type":"array","items":{"type":"string"}},
+    "stage":{"type":"string","enum":["proof","reproof","final_output","post_publication"]},
+    "captured_at":{"type":"string","format":"date-time"},
+    "captured_by":{"type":"string"},
+    "access_status":{"type":"string","enum":["authorized","protected","unavailable","incident"]}
+  }
+}

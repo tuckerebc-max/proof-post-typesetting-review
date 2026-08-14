@@ -1,0 +1,23 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/ppr/output.schema.json",
+  "title":"PPR Run Output",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["specification_id","run_id","chapter_id","baseline","proof","formats","findings","corrections","fixity_events","upstream_statuses","ledger","decision"],
+  "properties":{
+    "specification_id":{"const":"MWM-PPR-SPEC"},
+    "run_id":{"type":"string"},
+    "chapter_id":{"type":"string"},
+    "baseline":{"$ref":"https://mwm.local/schemas/ppr/baseline.schema.json"},
+    "proof":{"type":"object","additionalProperties":false,"required":["proof_id","format","file_id","fixity","completeness_status"],"properties":{"proof_id":{"type":"string"},"format":{"type":"string"},"file_id":{"type":"string"},"fixity":{"type":"string"},"completeness_status":{"type":"string","enum":["complete","corrupt","incomplete","unknown"]}}},
+    "formats":{"type":"array","items":{"type":"object","required":["format","status","evidence"],"properties":{"format":{"type":"string"},"status":{"type":"string","enum":["pass","signal","not_run","blocked"]},"evidence":{"type":"array","items":{"type":"string"}},"specialist_owner":{"type":["string","null"]}}}},
+    "findings":{"type":"array","items":{"$ref":"https://mwm.local/schemas/ppr/finding.schema.json"}},
+    "corrections":{"type":"array","items":{"$ref":"https://mwm.local/schemas/ppr/correction.schema.json"}},
+    "fixity_events":{"type":"array","items":{"$ref":"https://mwm.local/schemas/ppr/fixity-event.schema.json"}},
+    "upstream_statuses":{"type":"array","items":{"$ref":"https://mwm.local/schemas/ppr/upstream-result.schema.json"}},
+    "ledger":{"$ref":"https://mwm.local/schemas/ppr/ledger.schema.json"},
+    "decision":{"$ref":"https://mwm.local/schemas/ppr/decision.schema.json"},
+    "generated_at":{"type":"string","format":"date-time"}
+  }
+}

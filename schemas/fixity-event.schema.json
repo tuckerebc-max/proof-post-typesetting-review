@@ -1,0 +1,19 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/ppr/fixity-event.schema.json",
+  "title":"PPR Fixity Event",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["event_id","event_type","object_id","previous_object_id","hash_or_identifier","agent","event_time","evidence_locator","decision_id"],
+  "properties":{
+    "event_id":{"type":"string","pattern":"^PPR-EVT-"},
+    "event_type":{"type":"string","enum":["baseline_captured","proof_received","correction_submitted","correction_incorporated","reproof_passed","output_released","post_publication_update"]},
+    "object_id":{"type":"string"},
+    "previous_object_id":{"type":["string","null"]},
+    "hash_or_identifier":{"type":["string","null"]},
+    "agent":{"type":"string"},
+    "event_time":{"type":"string","format":"date-time"},
+    "evidence_locator":{"type":"string"},
+    "decision_id":{"type":["string","null"]}
+  }
+}

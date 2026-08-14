@@ -1,0 +1,10 @@
+{
+  "registry_id":"MWM-PPR-DEFECTS",
+  "version":"0.1.0",
+  "defect_types":["approved_variation","typesetter_error","factual_or_meaning_error","author_alteration","query_open","source_unavailable","asset_issue","accessibility_signal","status_issue","resolved","blocked"],
+  "impacts":["meaning","credit","navigation","indexing","pagination","accessibility","rights","privacy","cosmetic"],
+  "interventions":["AUTO_RECORD","NO_ACTION","CORRECT","QUERY","REPLACE_ASSET","REPROOF","HOLD","BLOCK","REFER"],
+  "release_decisions":["ready","ready_with_tracked_items","hold","blocked","post_publication_case"],
+  "no_action_examples":["approved blank page","valid URL wrap","approved line break","approved low-resolution proof preview"],
+  "closure_rule":"resolved requires incorporation evidence and reproof result; accepted or submitted alone is not resolved."
+}

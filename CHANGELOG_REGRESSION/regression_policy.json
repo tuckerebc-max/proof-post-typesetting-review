@@ -1,0 +1,8 @@
+{
+  "policy_id":"MWM-PPR-REGRESSION-POLICY",
+  "version":"0.1.0",
+  "zero_tolerance_classes":["false_ready","baseline_identity","correction_closure","reproof","silent_overwrite","status_authority","accessibility_boundary","rights_boundary","confidentiality","upstream_dependency"],
+  "required_actions":["contain affected proof/output or release decision","preserve baseline/fixity and event evidence","link rule/specification IDs","add or mutate fixture","rerun full suite","record owner approval","document migration or rollback"],
+  "closure_requirements":["corrective action recorded","targeted fixture passes","package validator passes","full scorer passes","human QA when material","owner approval recorded"],
+  "production_failure_routing":{"baseline_identity":"Production coordinator","correction_closure":"Production owner","reproof":"Proof editor and production","status_authority":"Senior editorial/metadata owner","accessibility_boundary":"Accessibility owner","rights_boundary":"Rights owner","confidentiality":"Security/editorial owner","upstream_dependency":"Owning family and Editorial QA/orchestration"}
+}

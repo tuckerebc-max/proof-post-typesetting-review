@@ -1,0 +1,12 @@
+{
+  "integration_set_id":"MWM-PPR-INTEGRATION-0.1",
+  "cases":[
+    {"case_id":"FX-INT-001","sequence":["capture baseline and fixity","validate proof/output","import upstream passes","verify corrections","check formats","record human release"],"assertions":["ready recommendation only with final fixity","no unresolved material issue","signatory remains human-owned"]},
+    {"case_id":"FX-INT-002","sequence":["accept correction","incorporate in reproof","recheck changed page and TOC/index","capture event"],"assertions":["correction resolves only after reproof","dependent navigation is rechecked","fixity event is retained"]},
+    {"case_id":"FX-INT-003","sequence":["detect failed reproof","retain correction state","hold release","route production"],"assertions":["failed correction remains reproof_required","release remains hold","no false ready"]},
+    {"case_id":"FX-INT-004","sequence":["check print","check PDF/ebook","record digital accessibility signal","route specialist"],"assertions":["format-specific results remain separate","no conformance overclaim","tracked item has owner"]},
+    {"case_id":"FX-INT-005","sequence":["preserve original release","record authorized decision","create linked update/notice","route metadata/status"],"assertions":["post_publication_case is explicit","original fixity retained","PPR does not decide status"]},
+    {"case_id":"FX-INT-006","sequence":["detect unauthorized sharing","contain proof channel","preserve incident evidence","block review"],"assertions":["confidentiality incident is blocked","security/editorial owner is routed","no further proof certification"]},
+    {"case_id":"FX-INT-007","sequence":["detect candidate outputs","detect missing fixity","import critical upstream status","apply release gate"],"assertions":["ambiguous final output remains blocked","upstream blocker is preserved","human signatory does not override block"]}
+  ]
+}

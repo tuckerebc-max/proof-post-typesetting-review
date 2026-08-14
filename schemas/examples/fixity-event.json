@@ -1,0 +1,1 @@
+{"event_id":"PPR-EVT-EXAMPLE-001","event_type":"reproof_passed","object_id":"proof-v2","previous_object_id":"proof-v1","hash_or_identifier":"sha256:proof-v2","agent":"production owner","event_time":"2026-08-14T00:00:00Z","evidence_locator":"reproof-log-1","decision_id":"PPR-DEC-EXAMPLE-001"}

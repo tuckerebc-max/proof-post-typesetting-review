@@ -1,0 +1,19 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/ppr/upstream-result.schema.json",
+  "title":"PPR Upstream Result",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["skill_id","run_id","status","finding_ids","owner","release_effect","refreshed_at"],
+  "properties":{
+    "skill_id":{"type":"string","enum":["RCI","SGI","TE","CE","SEI","CPR","EQA"]},
+    "run_id":{"type":"string"},
+    "status":{"type":"string","enum":["pass","not_run","query","hold","block","referred","unknown"]},
+    "finding_ids":{"type":"array","items":{"type":"string"}},
+    "owner":{"type":"string"},
+    "severity":{"type":["string","null"],"enum":["low","moderate","high","critical",null]},
+    "release_effect":{"type":"string","enum":["none","track","hold","block"]},
+    "refreshed_at":{"type":"string","format":"date-time"},
+    "evidence_locator":{"type":["string","null"]}
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "registry_id":"MWM-PPR-PROTECTED",
+  "version":"0.1.0",
+  "protected_record_types":["unpublished_proof","author_correspondence","correction_file","sensitive_participant_data","rights_document","internal_output","production_edit_log"],
+  "handling":"Use authorized proofing channels; store identifiers, access status, approved locators, owners, and retention references rather than reproducing sensitive contents.",
+  "required_controls":["authorized_channel","least_necessary_content","access_status","fixity_or_stable_id","retention_reference"],
+  "incident_triggers":["accidental_external_sharing","unapproved_public_link","sensitive_data_in_output","corrupt_or_incomplete_proof"],
+  "blocked_actions":["public proof link without authorization","silent overwrite of released record","unapproved external processing"]
+}

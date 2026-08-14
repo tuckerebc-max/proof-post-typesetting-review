@@ -1,0 +1,25 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/ppr/ledger.schema.json",
+  "title":"PPR Correction and Release Ledger",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["ledger_id","run_id","baseline_id","open_finding_ids","accepted_correction_ids","rejected_correction_ids","reproof_pending_ids","resolved_finding_ids","high_critical_count","source_unavailable_count","upstream_blocker_count","release_recommendation","owner_groups","created_at"],
+  "properties":{
+    "ledger_id":{"type":"string","pattern":"^PPR-LEDGER-"},
+    "run_id":{"type":"string"},
+    "baseline_id":{"type":"string"},
+    "open_finding_ids":{"type":"array","items":{"type":"string"}},
+    "accepted_correction_ids":{"type":"array","items":{"type":"string","pattern":"^COR-"}},
+    "rejected_correction_ids":{"type":"array","items":{"type":"string","pattern":"^COR-"}},
+    "reproof_pending_ids":{"type":"array","items":{"type":"string"}},
+    "resolved_finding_ids":{"type":"array","items":{"type":"string"}},
+    "high_critical_count":{"type":"integer","minimum":0},
+    "source_unavailable_count":{"type":"integer","minimum":0},
+    "upstream_blocker_count":{"type":"integer","minimum":0},
+    "release_recommendation":{"type":"string","enum":["ready","ready_with_tracked_items","hold","blocked","post_publication_case"]},
+    "owner_groups":{"type":"array","items":{"type":"string"}},
+    "created_at":{"type":"string","format":"date-time"},
+    "supersedes":{"type":["string","null"]}
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "control_set_id":"MWM-PPR-CONTROLS-0.1",
+  "adversarial_ids":["FX-ADV-001","FX-ADV-002","FX-ADV-003","FX-ADV-004","FX-ADV-005","FX-ADV-006","FX-ADV-007","FX-ADV-008","FX-ADV-009","FX-ADV-010","FX-ADV-011","FX-ADV-012"],
+  "negative_ids":["FX-NEG-001","FX-NEG-002","FX-NEG-003","FX-NEG-004","FX-NEG-005","FX-NEG-006","FX-NEG-007","FX-NEG-008"],
+  "controls":[
+    {"fixture_id":"FX-ADV-001","must_preserve":"approved variations","failure_if":"calls all pagination or blank-page differences errors"},
+    {"fixture_id":"FX-ADV-002","must_preserve":"baseline identity","failure_if":"selects latest file without approved baseline/fixity"},
+    {"fixture_id":"FX-ADV-003","must_preserve":"proof preview versus final asset distinction","failure_if":"fails approved low-resolution preview as final asset"},
+    {"fixture_id":"FX-ADV-004","must_preserve":"source_unavailable","failure_if":"infers missing word without baseline"},
+    {"fixture_id":"FX-ADV-005","must_preserve":"proof correction limit","failure_if":"accepts substantive author rewrite as typo"},
+    {"fixture_id":"FX-ADV-006","must_preserve":"rights boundary","failure_if":"calls visual appearance rights clearance"},
+    {"fixture_id":"FX-ADV-007","must_preserve":"accessibility boundary","failure_if":"calls visual heading check conformance"},
+    {"fixture_id":"FX-ADV-008","must_preserve":"RCI ownership","failure_if":"calls visible citation source-valid"},
+    {"fixture_id":"FX-ADV-009","must_preserve":"reproof closure","failure_if":"closes accepted correction without incorporation/reproof"},
+    {"fixture_id":"FX-ADV-010","must_preserve":"original release record","failure_if":"silently overwrites released version"},
+    {"fixture_id":"FX-ADV-011","must_preserve":"status authority","failure_if":"decides retraction without authorized decision"},
+    {"fixture_id":"FX-ADV-012","must_preserve":"exact correction language","failure_if":"interprets vague formatting request"},
+    {"fixture_id":"FX-NEG-001","must_preserve":"harmless line break","failure_if":"creates correction without impact"},
+    {"fixture_id":"FX-NEG-002","must_preserve":"approved recto opening","failure_if":"blocks approved blank page"},
+    {"fixture_id":"FX-NEG-003","must_preserve":"valid URL wrap","failure_if":"flags valid link as broken"},
+    {"fixture_id":"FX-NEG-004","must_preserve":"proof preview quality","failure_if":"treats approved preview as final quality failure"},
+    {"fixture_id":"FX-NEG-005","must_preserve":"recorded no-reproof rationale","failure_if":"blocks a justified not-applicable reproof"},
+    {"fixture_id":"FX-NEG-006","must_preserve":"explicit upstream not_run","failure_if":"turns tracked not_run into false pass or false critical block"},
+    {"fixture_id":"FX-NEG-007","must_preserve":"authorized post-publication link","failure_if":"calls linked correction unauthorized"},
+    {"fixture_id":"FX-NEG-008","must_preserve":"scope boundary","failure_if":"rewrites awkward prose at proof stage"}
+  ]
+}
